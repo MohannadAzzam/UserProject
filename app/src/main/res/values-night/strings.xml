@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_home">الرئيسية</string>
+    <string name="user_orders">الطلبات</string>
+    <string name="user_location">الموقع</string>
+    <string name="user_settings">الإعدادات</string>
+    <string name="search">البحث</string>
+    <string name="cart">السلة</string>
+</resources>

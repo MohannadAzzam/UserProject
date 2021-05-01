@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_2sdp"
+        android:layout_margin="@dimen/_6sdp"
+        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/productImage_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/apple" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/productName_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/jf"
+                android:gravity="center"
+                android:text="تفاح"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:id="@+id/productPrice_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/jf"
+                android:gravity="center"
+                android:text="2 شيكل"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/productAddress_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/jf"
+            android:gravity="center"
+            android:text="غزة - الزيتون - دوار حبيب"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="@dimen/_16ssp" />
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

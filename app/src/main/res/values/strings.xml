@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">UserProject</string>
+    <string name="user_home">الرئيسية</string>
+    <string name="user_orders">الطلبات</string>
+    <string name="user_location">الموقع</string>
+    <string name="user_settings">الإعدادات</string>
+    <string name="search">البحث</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart">السلة</string>
+
+    <string name="title_activity_maps">Map</string>
+
+</resources>
