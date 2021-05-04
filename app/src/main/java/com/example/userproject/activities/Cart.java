@@ -44,8 +44,8 @@ dailogFragment.show(getSupportFragmentManager(),null);
 
         ArrayList<com.example.userproject.models.Cart> carts = new ArrayList<>();
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"موز"));
-        carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"مانجا"));
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
+        carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"أناناس"));
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
 
