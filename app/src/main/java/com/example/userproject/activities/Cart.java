@@ -36,7 +36,7 @@ public class Cart extends AppCompatActivity implements DailogFragment.DialogeInt
         btn_Approval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-DailogFragment dailogFragment=DailogFragment.newInstance("Dialog message ","Dialog done",123);
+DailogFragment dailogFragment=DailogFragment.newInstance("Dialog message","Dialog done",123);
 dailogFragment.show(getSupportFragmentManager(),null);
             }
         });
