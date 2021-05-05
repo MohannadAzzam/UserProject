@@ -14,6 +14,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -62,9 +63,13 @@ public class HomeFragment extends Fragment {
     private RecyclerView nearly_product_rv;
     private RecyclerView category_rv;
     private RecyclerView farmer_rv;
+    private SwipeRefreshLayout swipeRefreshLayout;
+
 
     private List<Category> categoriesList = new ArrayList<>();
     private CategoryRetrofitApi categoryRetrofitApi;
+    private ArrayList<Product> products;
+    private ArrayList<Person> people;
 
 
     public HomeFragment() {
@@ -100,6 +105,7 @@ public class HomeFragment extends Fragment {
         nearly_product_rv = v.findViewById(R.id.fragment_home_nearly_product_rv);
         category_rv = v.findViewById(R.id.fragment_home_category_rv);
         farmer_rv = v.findViewById(R.id.fragment_home_nearly_seller_rv);
+        swipeRefreshLayout = v.findViewById(R.id.home_swipeToRefresh);
 
 
         return v;
@@ -115,44 +121,23 @@ public class HomeFragment extends Fragment {
 //            showCustomDialog();
 //        }else {
 
+        products = new ArrayList<>();
+        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
 
-
-        ArrayList<Product> products = new ArrayList<>();
-        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        ProductAdapter productAdapter = new ProductAdapter(products, new ProductAdapter.onRecyclerViewItemClickListener() {
-            @Override
-            public void onItemClick(int id) {
-                Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        best_pricely_locationaly_rv.setLayoutManager(layoutManager);
-        best_pricely_locationaly_rv.setHasFixedSize(true);
-        best_pricely_locationaly_rv.setAdapter(productAdapter);
-
-
-        ArrayList<Product> products2 = new ArrayList<>();
-        products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-        ProductAdapter productAdapter2 = new ProductAdapter(products2, new ProductAdapter.onRecyclerViewItemClickListener() {
-            @Override
-            public void onItemClick(int id) {
-                Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
-        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        nearly_product_rv.setLayoutManager(layoutManager2);
-        nearly_product_rv.setHasFixedSize(true);
-        nearly_product_rv.setAdapter(productAdapter2);
+        people = new ArrayList<>();
+        people.add(new Person(R.drawable.person));
+        people.add(new Person(R.drawable.apple));
+        people.add(new Person(R.drawable.ic_person));
+        people.add(new Person(R.drawable.person));
+        people.add(new Person(R.drawable.apple));
+        people.add(new Person(R.drawable.ic_person));
+        people.add(new Person(R.drawable.person));
+        people.add(new Person(R.drawable.apple));
+        people.add(new Person(R.drawable.ic_person));
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -162,8 +147,24 @@ public class HomeFragment extends Fragment {
 
         categoryRetrofitApi = retrofit.create(CategoryRetrofitApi.class);
 
+        getBestPricely(products);
+        getNearly(products);
+        getNearFarmer(people);
         getAllCategories();
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getBestPricely(products);
+                getNearly(products);
+                getNearFarmer(people);
+//                ArrayList<Product> products2 = new ArrayList<>();
+//                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+//                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+//                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+//                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+//                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
+                getAllCategories();
 //        ArrayList<Category> categories = new ArrayList<>();
 //        categories.add(new Category("فواكه", R.drawable.apple));
 //        categories.add(new Category("خضار", R.drawable.apple));
@@ -178,19 +179,40 @@ public class HomeFragment extends Fragment {
 //        RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 //        category_rv.setLayoutManager(CategoryLayoutManager);
 //        category_rv.setAdapter(categoryAdapter);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+    }
 
-        ArrayList<Person> people = new ArrayList<>();
-        people.add(new Person(R.drawable.person));
-        people.add(new Person(R.drawable.apple));
-        people.add(new Person(R.drawable.ic_person));
-        people.add(new Person(R.drawable.person));
-        people.add(new Person(R.drawable.apple));
-        people.add(new Person(R.drawable.ic_person));
-        people.add(new Person(R.drawable.person));
-        people.add(new Person(R.drawable.apple));
-        people.add(new Person(R.drawable.ic_person));
+    private void getBestPricely(ArrayList<Product> products) {
+        ProductAdapter productAdapter = new ProductAdapter(products, new ProductAdapter.onRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        best_pricely_locationaly_rv.setLayoutManager(layoutManager);
+        best_pricely_locationaly_rv.setHasFixedSize(true);
+        best_pricely_locationaly_rv.setAdapter(productAdapter);
+    }
 
+    private void getNearly(ArrayList<Product> products) {
+        ProductAdapter productAdapter = new ProductAdapter(products, new ProductAdapter.onRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        nearly_product_rv.setLayoutManager(layoutManager2);
+        nearly_product_rv.setHasFixedSize(true);
+        nearly_product_rv.setAdapter(productAdapter);
+    }
 
+    private void getNearFarmer(ArrayList<Person> people) {
         PersonAdapter personAdapter = new PersonAdapter(people, new PersonAdapter.onRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(int id) {
@@ -203,8 +225,8 @@ public class HomeFragment extends Fragment {
         farmer_rv.setHasFixedSize(true);
         farmer_rv.setLayoutManager(personLayoutManager);
         farmer_rv.setAdapter(personAdapter);
-//        }
     }
+
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -262,6 +284,7 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
                 }
             }
+
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
                 String message = t.getLocalizedMessage();
@@ -271,7 +294,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    boolean isConnected(HomeFragment login){
+    boolean isConnected(HomeFragment login) {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifiConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo MobileDataConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);

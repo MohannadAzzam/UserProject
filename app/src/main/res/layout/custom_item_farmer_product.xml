@@ -11,7 +11,7 @@
         android:id="@+id/order_id_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_2sdp"
+        android:layout_margin="@dimen/_3sdp"
         android:padding="@dimen/_6sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_2sdp">

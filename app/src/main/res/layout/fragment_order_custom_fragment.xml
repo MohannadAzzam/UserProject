@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ss"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/order_swipeToRefresh"
     android:layoutDirection="rtl"
     android:orientation="vertical"
     tools:context=".fragments.Order_custom_fragment">
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:visibility="gone">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fillViewport="true"-->
+<!--        android:visibility="gone">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
 
-            <include
-                android:id="@+id/fragmentactivity_id_include"
-                layout="@layout/order_custom_design"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp" />
+<!--            <include-->
+<!--                android:id="@+id/fragmentactivity_id_include"-->
+<!--                layout="@layout/order_custom_design"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_3sdp" />-->
 
-            <include
-                android:id="@+id/fragmentactivity_id_include"
-                layout="@layout/order_custom_design"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp" />
+<!--            <include-->
+<!--                android:id="@+id/fragmentactivity_id_include"-->
+<!--                layout="@layout/order_custom_design"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_3sdp" />-->
 
-            <include
-                android:id="@+id/fragmentactivity_id_include"
-                layout="@layout/order_custom_design"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp" />
+<!--            <include-->
+<!--                android:id="@+id/fragmentactivity_id_include"-->
+<!--                layout="@layout/order_custom_design"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_3sdp" />-->
 
-            <include
-                android:id="@+id/fragmentactivity_id_include"
-                layout="@layout/order_custom_design"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp" />
+<!--            <include-->
+<!--                android:id="@+id/fragmentactivity_id_include"-->
+<!--                layout="@layout/order_custom_design"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_3sdp" />-->
 
-            <include
-                android:id="@+id/fragmentactivity_id_include"
-                layout="@layout/order_custom_design"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+<!--            <include-->
+<!--                android:id="@+id/fragmentactivity_id_include"-->
+<!--                layout="@layout/order_custom_design"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/_3sdp" />-->
+<!--        </LinearLayout>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orderfragment_rv_orders"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
+        android:layout_height="match_parent"/>
+<!--</FrameLayout>-->
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

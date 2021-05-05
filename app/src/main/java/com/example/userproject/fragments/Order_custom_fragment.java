@@ -9,6 +9,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,7 +22,6 @@ import com.example.userproject.R;
 import com.example.userproject.activities.ProductDetailsActivity;
 import com.example.userproject.adapters.OrderAdapter;
 import com.example.userproject.models.Order;
-import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
 
 import java.util.ArrayList;
 
@@ -41,23 +41,14 @@ public class Order_custom_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    RecyclerView orderRecycler;
-
-
-
+    private RecyclerView orderRecycler;
+    private ArrayList<Order> orders;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public Order_custom_fragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Order_custom_fragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static Order_custom_fragment newInstance(String param1, String param2) {
         Order_custom_fragment fragment = new Order_custom_fragment();
@@ -83,21 +74,32 @@ public class Order_custom_fragment extends Fragment {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_order_custom_fragment, container, false);
         setHasOptionsMenu(true);
-
         orderRecycler = v.findViewById(R.id.orderfragment_rv_orders);
-
+        swipeRefreshLayout = v.findViewById(R.id.order_swipeToRefresh);
         return v;
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        ArrayList<Order> orders =new ArrayList<>();
+         orders =new ArrayList<>();
         orders.add(new Order(R.drawable.apple,6,"تم","10.10.2020"));
         orders.add(new Order(R.drawable.apple,155,"تم","10.10.2020"));
         orders.add(new Order(R.drawable.apple,155,"تم","10.10.2020"));
         orders.add(new Order(R.drawable.apple,155,"تم","10.10.2020"));
         orders.add(new Order(R.drawable.apple,155,"تم","10.10.2020"));
         orders.add(new Order(R.drawable.apple,155,"تم","10.10.2020"));
+        getAllProduct(orders);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getAllProduct(orders);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+        super.onViewCreated(view, savedInstanceState);
+    }
+    private void getAllProduct(ArrayList<Order> orders) {
         OrderAdapter orderAdapter = new OrderAdapter(orders, new OrderAdapter.onRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(int id) {
@@ -107,9 +109,8 @@ public class Order_custom_fragment extends Fragment {
         });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         orderRecycler.setLayoutManager(layoutManager);
+        orderRecycler.setHasFixedSize(true);
         orderRecycler.setAdapter(orderAdapter);
-
-        super.onViewCreated(view, savedInstanceState);
     }
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
@@ -122,7 +123,6 @@ public class Order_custom_fragment extends Fragment {
                 //when click ok searching....
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 //when typing searching...
@@ -136,9 +136,7 @@ public class Order_custom_fragment extends Fragment {
                 return false;
             }
         });
-//        return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
