@@ -5,6 +5,7 @@
     android:id="@+id/category_swipeToRefresh"
     android:layout_width="match_parent"
     android:layoutDirection="rtl"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     tools:context=".activities.CategoryActivity">
 
@@ -22,6 +23,7 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
             android:layout_height="match_parent">
 
             <LinearLayout
@@ -29,7 +31,6 @@
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_marginTop="?attr/actionBarSize"
                     android:id="@+id/category_ReycelerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
