@@ -47,7 +47,7 @@ dailogFragment.show(getSupportFragmentManager(),null);
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
         carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
-        carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"تفاح"));
+        carts.add(new com.example.userproject.models.Cart(R.drawable.apple,25,"انجاص"));
 
         CartAdapter cartAdapter = new CartAdapter(carts, new onRecyclerViewItemClickListener() {
             @Override
