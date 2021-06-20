@@ -43,8 +43,7 @@
             android:layout_height="@dimen/_45sdp"
             android:layout_weight="1"
             android:padding="@dimen/_4sdp"
-            app:srcCompat="@drawable/ic_pickaxe"
-             />
+            app:srcCompat="@drawable/ic_pickaxe" />
     </LinearLayout>
 
     <LinearLayout

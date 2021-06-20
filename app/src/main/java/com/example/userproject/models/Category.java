@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Category {
     private int id;
-    @SerializedName("name")
+    @SerializedName("categoryName")
     private String Name;
-    @SerializedName("url")
+    @SerializedName("categoryImage")
     private String img;
 
     public Category(int id, String name, String img) {

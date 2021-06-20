@@ -1,6 +1,15 @@
 package com.example.userproject.models;
 
 public class Product {
+    /*    private int productId;
+    @SerializedName("productImage")
+    private String productImage;
+    @SerializedName("productName")
+    private String productName;
+    @SerializedName("productPrice")
+    private int productPrice;
+    @SerializedName("productAddress")
+    private String productAddress;*/
     private int productId;
     private int productImage;
     private String productName;

@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface CategoryRetrofitApi {
 
-    @GET("images/")
+    @GET("Category/")
     Call<List<Category>> getAllCategories();
 }
