@@ -37,6 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register = findViewById(R.id.login_btn_login);
 
         actv_userType = findViewById(R.id.register_dropDown_userType);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, ValidationCode.class);
+                startActivity(intent);
+            }
+        });
         String[] option = {"مستخدم", "مزارع"};
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.option_item, option);

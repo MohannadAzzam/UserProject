@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UserProject">
-        <activity android:name=".activities.RegisterActivity"></activity>
+        <activity android:name=".activities.ValidationCode"></activity>
+        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.SplashScreen">
             <intent-filter>
