@@ -63,18 +63,6 @@
                         android:textSize="@dimen/_16ssp" />
 
                     <TextView
-                        android:id="@+id/product_details_product_new_price"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:layout_marginBottom="@dimen/_2sdp"
-                        android:fontFamily="@font/jf"
-                        android:paddingStart="@dimen/_6sdp"
-                        android:text="25 شيكل"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_16ssp" />
-
-                    <TextView
                         android:id="@+id/product_details_product_old_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

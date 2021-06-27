@@ -7,18 +7,14 @@ public class Category {
     @SerializedName("categoryName")
     private String Name;
     @SerializedName("categoryImage")
-    private String img;
+    private int img;
 
-    public Category(int id, String name, String img) {
+    public Category(String name, int img) {
         this.id = id;
-        this.Name = name;
-        this.img = img;
-    }
-
-    public Category(String name, String img) {
         Name = name;
         this.img = img;
     }
+
 
     public int getId() {
         return id;
@@ -36,11 +32,12 @@ public class Category {
         Name = name;
     }
 
-    public String getImg() {
+    public int getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(int img) {
         this.img = img;
     }
 }
+

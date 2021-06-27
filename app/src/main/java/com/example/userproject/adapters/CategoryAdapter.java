@@ -41,11 +41,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         Category category = categories.get(position);
-//        holder.categoreimg.setImageResource(category.getImg());
+        holder.categoreimg.setImageResource(category.getImg());
         holder.textName.setText(category.getName());
-        Glide.with(context)
-                .load(categories.get(position).getImg())
-                .into(holder.categoreimg);
+//        Glide.with(context)
+//                .load(categories.get(position).getImg())
+//                .into(holder.categoreimg);
 
         holder.categoreimg.setTag(category.getImg());
 
@@ -68,10 +68,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String id = (String) categoreimg.getTag();
+                    int id = (int) categoreimg.getTag();
                     listener.onItemClick(id);
                 }
             });
         }
+    }
+
+    public interface onRecyclerViewItemClickListener {
+        void onItemClick(int id);
     }
 }

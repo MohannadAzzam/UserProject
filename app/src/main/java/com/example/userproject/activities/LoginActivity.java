@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextInputLayout  et_password,et_PhoneNumber;
+    private TextInputLayout  et_password,et_username;
     private Button btn_login;
     private TextView tv_click_here;
 
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         et_password = findViewById(R.id.login_et_password);
-        et_password = findViewById(R.id.register_et_phoneNumber);
+        et_username = findViewById(R.id.register_et_phoneNumber);
 
         btn_login = findViewById(R.id.login_btn_login);
 

@@ -26,13 +26,13 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ValidationCode_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:hint="رمز التحقق">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ValidationCode_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
@@ -41,13 +41,28 @@
             android:textSize="@dimen/_18ssp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/ValidationCode_btn_ok_"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/jf"
-        android:text="تأكيد"
-        android:textSize="@dimen/_18ssp" />
+        <Button
+            android:id="@+id/ValidationCode_btn_ok_"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/jf"
+            android:text="تأكيد"
+            android:textSize="@dimen/_18ssp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp" />
+    </FrameLayout>
+
 </LinearLayout>

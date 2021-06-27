@@ -153,7 +153,21 @@ public class HomeFragment extends Fragment {
         getBestPricely(products);
         getNearly(products);
         getNearFarmer(people);
-        getAllCategories();
+        ArrayList<Category> categories = new ArrayList<>();
+        categories.add(new Category("فواكه", R.drawable.apple));
+        categories.add(new Category("خضار", R.drawable.apple));
+        CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), categories, new CategoryAdapter.onRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        category_rv.setLayoutManager(CategoryLayoutManager);
+        category_rv.setAdapter(categoryAdapter);
+//        getAllCategories();
         //getAllProducts();
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -168,22 +182,22 @@ public class HomeFragment extends Fragment {
 //                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
 //                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
 //                products2.add(new Product(R.drawable.apple, "تفاح", "20 شيكل", "غزة - الزيتون - دوار حبيب"));
-                getAllCategories();
+//                getAllCategories();
                 //getAllProducts();
-//        ArrayList<Category> categories = new ArrayList<>();
-//        categories.add(new Category("فواكه", R.drawable.apple));
-//        categories.add(new Category("خضار", R.drawable.apple));
-//        CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), categories, new onRecyclerViewItemClickListener() {
-//            @Override
-//            public void onItemClick(int ProductId) {
-//                Intent intent = new Intent(getContext(), CategoryActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-//        category_rv.setLayoutManager(CategoryLayoutManager);
-//        category_rv.setAdapter(categoryAdapter);
+        ArrayList<Category> categories = new ArrayList<>();
+        categories.add(new Category("فواكه", R.drawable.apple));
+        categories.add(new Category("خضار", R.drawable.apple));
+        CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), categories, new CategoryAdapter.onRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int id) {
+                Intent intent = new Intent(getContext(), CategoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        category_rv.setLayoutManager(CategoryLayoutManager);
+        category_rv.setAdapter(categoryAdapter);
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -297,37 +311,37 @@ public class HomeFragment extends Fragment {
             }
         });
     }*/
-    public void getAllCategories() {
-        Call<List<Category>> categories = categoryRetrofitApi.getAllCategories();
-        categories.enqueue(new Callback<List<Category>>() {
-            @Override
-            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-                if (response.isSuccessful()) {
-                    String message = "Response successful";
-                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-                    categoriesList = (ArrayList<Category>) response.body();
-                    CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), (ArrayList<Category>) categoriesList, new onRecyclerViewItemClickListener() {
-                        @Override
-                        public void onItemClick(String id) {
-                            Intent intent = new Intent(getContext(), CategoryActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-                    RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-                    category_rv.setLayoutManager(CategoryLayoutManager);
-                    category_rv.setAdapter(categoryAdapter);
-                } else {
-                    String message = "An error occurred try again later ..";
-                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Category>> call, Throwable t) {
-                String message = t.getLocalizedMessage();
-                Toast.makeText(getContext(), "No Categories \n" + message, Toast.LENGTH_LONG).show();
-            }
-        });
-    }
+//    public void getAllCategories() {
+//        Call<List<Category>> categories = categoryRetrofitApi.getAllCategories();
+//        categories.enqueue(new Callback<List<Category>>() {
+//            @Override
+//            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+//                if (response.isSuccessful()) {
+//                    String message = "Response successful";
+//                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
+//                    categoriesList = (ArrayList<Category>) response.body();
+//                    CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), (ArrayList<Category>) categoriesList, new onRecyclerViewItemClickListener() {
+//                        @Override
+//                        public void onItemClick(String id) {
+//                            Intent intent = new Intent(getContext(), CategoryActivity.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+//                    RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+//                    category_rv.setLayoutManager(CategoryLayoutManager);
+//                    category_rv.setAdapter(categoryAdapter);
+//                } else {
+//                    String message = "An error occurred try again later ..";
+//                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
+//                }
+//            }
+//            @Override
+//            public void onFailure(Call<List<Category>> call, Throwable t) {
+//                String message = t.getLocalizedMessage();
+//                Toast.makeText(getContext(), "No Categories \n" + message, Toast.LENGTH_LONG).show();
+//            }
+//        });
+//    }
 
     boolean isConnected(HomeFragment login) {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
