@@ -181,8 +181,8 @@ public class MapFragment extends Fragment {
             } else
 
             {
-                startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                Toast.makeText(getContext(), "Flag", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(Settings.ACTION_LOCALE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//                Toast.makeText(getContext(), "Flag", Toast.LENGTH_SHORT).show();
             }
 
 //        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
