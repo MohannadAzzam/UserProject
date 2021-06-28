@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.farmerproject.Model.Product;
+
 import com.example.userproject.models.FProduct;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
