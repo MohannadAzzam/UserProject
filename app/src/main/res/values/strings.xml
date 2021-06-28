@@ -25,5 +25,21 @@
     <string name="accounttype">نوع الحساب</string>
     <string name="register">انشاء الحساب</string>
 
+    <string name="farmer_home">الرئيسية</string>
+    <string name="farmer_orders">الطلبات</string>
+    <string name="farmer_location">الموقع</string>
+    <string name="farmer_settings">الإعدادات</string>
+    <string name="farmer_dashboard">الإحصائيات</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clickOnImage">اضغط على الصورة</string>
+    <string name="productName">اسم المنتج</string>
+    <string name="productPrice">سعر المنتج</string>
+    <string name="productDesc">وصف المنتج</string>
+    <string name="Addproduct">أضف المنتج</string>
+    <string name="ProductType">نوع المنتج</string>
+
+    <string name="saveproduct">حفظ </string>
+
 
 </resources>

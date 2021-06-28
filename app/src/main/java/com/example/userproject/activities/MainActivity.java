@@ -2,17 +2,16 @@ package com.example.userproject.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.userproject.R;
+
 import com.example.userproject.fragments.HomeFragment;
 import com.example.userproject.fragments.MapFragment;
 import com.example.userproject.fragments.Order_custom_fragment;

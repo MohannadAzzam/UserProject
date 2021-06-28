@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:layoutDirection="rtl"
     android:orientation="vertical"
-    tools:context=".fragments.SettingsFragment">
+    tools:context=".user.fragments.SettingsFragment">
 
 
     <androidx.core.widget.NestedScrollView

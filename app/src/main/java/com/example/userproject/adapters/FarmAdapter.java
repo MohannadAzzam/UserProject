@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.example.userproject.R;
 import com.example.userproject.models.Farm;
-import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
 
 import java.util.ArrayList;
 

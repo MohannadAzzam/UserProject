@@ -12,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userproject.R;
 import com.example.userproject.adapters.FarmAdapter;
-import com.example.userproject.adapters.OrderAdapter;
 import com.example.userproject.models.Farm;
-import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
+
 
 import java.util.ArrayList;
 

@@ -18,7 +18,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UserProject">
-        <activity android:name=".activities.ValidationCode"></activity>
+        <activity android:name=".activities.SettingsActivity"></activity>
+        <activity android:name=".activities.RefuseCauseActivity" />
+        <activity android:name=".activities.R_Home_Edit_Delete" />
+        <activity android:name=".activities.FOrderDetailsActivity" />
+        <activity android:name=".activities.FMapActivity" />
+        <activity android:name=".activities.FMainActivity" />
+        <activity android:name=".activities.FEditProduct" />
+        <activity android:name=".activities.FAdressesActivity" />
+        <activity android:name=".activities.FAddProductActivity" />
+        <activity android:name=".activities.ValidationCode" />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.SplashScreen">

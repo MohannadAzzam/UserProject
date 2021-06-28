@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userproject.R;
-import com.example.userproject.models.Cart;
 import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
+import com.example.userproject.models.Cart;
 
 import java.util.ArrayList;
 

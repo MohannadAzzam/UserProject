@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activities.R_Home_Edit_Delete">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/design_default_color_primary"
+        android:elevation="@dimen/_4sdp"
+        android:theme="@style/ToolbarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/h_e_imag"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/place" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bungee"
+        android:text="name"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#000"
+        android:id="@+id/h_e_name"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Price"
+        android:fontFamily="@font/bungee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#000"
+        android:id="@+id/h_e_price"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+ <TextView
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Decscrbtion"
+        android:fontFamily="@font/bungee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginHorizontal="30dp"
+        android:textColor="#000"
+        android:id="@+id/h_e_desc"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+</LinearLayout>

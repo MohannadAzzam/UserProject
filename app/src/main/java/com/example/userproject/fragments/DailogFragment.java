@@ -54,8 +54,8 @@ public class DailogFragment extends DialogFragment {
 
 
     // TODO: Rename and change types and number of parameters
-    public static com.example.userproject.fragments.DailogFragment newInstance(String message, String done, int title) {
-        com.example.userproject.fragments.DailogFragment fragment = new com.example.userproject.fragments.DailogFragment();
+    public static DailogFragment newInstance(String message, String done, int title) {
+     DailogFragment fragment = new DailogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_MESSAGE, message);
         args.putString(ARG_DONE, done);

@@ -6,7 +6,7 @@
     android:id="@+id/order_swipeToRefresh"
     android:layoutDirection="rtl"
     android:orientation="vertical"
-    tools:context=".fragments.Order_custom_fragment">
+    tools:context=".user.fragments.Order_custom_fragment">
 
 
 <!--    <androidx.core.widget.NestedScrollView-->

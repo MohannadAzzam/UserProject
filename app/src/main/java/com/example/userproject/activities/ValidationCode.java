@@ -52,6 +52,12 @@ public class ValidationCode extends AppCompatActivity {
         verify_btn = findViewById(R.id.ValidationCode_btn_ok_);
         validationCode_et = findViewById(R.id.ValidationCode_et);
         progressBar = findViewById(R.id.progressBar);
+        
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        String s = user.getPhoneNumber();
+
+        String uid = user.getUid();
 
 
         mAuth = FirebaseAuth.getInstance();

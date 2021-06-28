@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userproject.R;
 import com.example.userproject.adapters.AddressAdapter;
+
 import com.example.userproject.models.UserAddress;
-import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

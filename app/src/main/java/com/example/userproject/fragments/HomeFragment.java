@@ -37,14 +37,11 @@ import com.example.userproject.interfaces.ProductRetrofitApi;
 import com.example.userproject.models.Category;
 import com.example.userproject.models.Person;
 import com.example.userproject.models.Product;
-import com.example.userproject.interfaces.onRecyclerViewItemClickListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -278,70 +275,6 @@ public class HomeFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-
-  /*  public  void getAllProducts(){
-        Call<List<Product>> products = productRetrofitApi.getAllProducts();
-        products.enqueue(new Callback<List<Product>>() {
-            @Override
-            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                if (response.isSuccessful()){
-                    String message = "Response successful";
-                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-                    productsList = (ArrayList<Product>) response.body();
-                    ProductAdapter productAdapter = new ProductAdapter(getContext(), (ArrayList<Product>) productsList, new onRecyclerViewItemClickListener() {
-                        @Override
-                        public void onItemClick(String id) {
-                            Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-                    RecyclerView.LayoutManager ProductLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
-                    best_pricely_locationaly_rv.setLayoutManager(ProductLayoutManager);
-                    best_pricely_locationaly_rv.setAdapter(productAdapter);
-                }else {
-                    String message = "An error occurred try again later ..";
-                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Product>> call, Throwable t) {
-                String message = t.getLocalizedMessage();
-               // Toast.makeText(getContext(), "No Categories \n" + message, Toast.LENGTH_LONG).show();
-            }
-        });
-    }*/
-//    public void getAllCategories() {
-//        Call<List<Category>> categories = categoryRetrofitApi.getAllCategories();
-//        categories.enqueue(new Callback<List<Category>>() {
-//            @Override
-//            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-//                if (response.isSuccessful()) {
-//                    String message = "Response successful";
-//                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-//                    categoriesList = (ArrayList<Category>) response.body();
-//                    CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), (ArrayList<Category>) categoriesList, new onRecyclerViewItemClickListener() {
-//                        @Override
-//                        public void onItemClick(String id) {
-//                            Intent intent = new Intent(getContext(), CategoryActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//                    RecyclerView.LayoutManager CategoryLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-//                    category_rv.setLayoutManager(CategoryLayoutManager);
-//                    category_rv.setAdapter(categoryAdapter);
-//                } else {
-//                    String message = "An error occurred try again later ..";
-//                    Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-//                }
-//            }
-//            @Override
-//            public void onFailure(Call<List<Category>> call, Throwable t) {
-//                String message = t.getLocalizedMessage();
-//                Toast.makeText(getContext(), "No Categories \n" + message, Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
 
     boolean isConnected(HomeFragment login) {
         ConnectivityManager connectivityManager = (ConnectivityManager) login.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
